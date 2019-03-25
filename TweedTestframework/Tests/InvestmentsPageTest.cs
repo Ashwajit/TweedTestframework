@@ -12,8 +12,8 @@ namespace TweedTestframework.Tests
     public class InvestmentsPageTest : BaseTest
     {
 
-        [Test (Description ="Checking Investment Page Exists")]
-        public void TestMethod1()
+        [Test (Description ="Verifying Investment Page Exists")]
+        public void VerifyInvestmentPageExists()
         {
 
             String expected = "INVESTMENTS";
@@ -22,8 +22,8 @@ namespace TweedTestframework.Tests
              Assert.AreEqual(expected,actual);
         }
 
-        [Test(Description = "Verify footer title displayed on the footer")]
-        public void TestMethod2()
+        [Test(Description = "Verify footer title displayed on footer panel")]
+        public void VerifyFooterTitle()
         {
 
             var expected = "We're here for you";
@@ -33,7 +33,7 @@ namespace TweedTestframework.Tests
         }
 
         [Test(Description = "Click on Contactus link on Footer")]
-        public void TestMethod3()
+        public void ClickContactUsFooterLink()
         {
             var expected = "Contact us";
             var investment = new InvestmentsPage(driver);
@@ -46,7 +46,7 @@ namespace TweedTestframework.Tests
         }
 
         [Test(Description = "Click on StoreFinder link on Footer Panel")]
-        public void TestMethod4()
+        public void ClickStoreFinderFooterLink()
         {
             var expected = "A WARM WELCOME";
             var investment = new InvestmentsPage(driver);
