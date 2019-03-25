@@ -19,7 +19,7 @@ namespace TweedTestframework
         {
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://uk.virginmoney.com/virgin/splash/investments.jsp");
-            Thread.Sleep(1000);
+            Thread.Sleep(2000);
         }
 
         [TearDown]
