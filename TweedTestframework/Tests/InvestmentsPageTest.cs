@@ -2,11 +2,7 @@
 using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+//using System.ComponentModel;
 using TweedTestframework.PageObjects.Pages;
 
 namespace TweedTestframework.Tests
@@ -31,7 +27,7 @@ namespace TweedTestframework.Tests
             extent.Flush();
         }
 
-        [Test (Description ="Verifying Investment Page Exists")]
+        [Test (Description ="Verifying Investment page exists"),Category("Smoke Testing"),Category("Functional Testing")]
         public void TestMethod1()
         {
             
@@ -44,7 +40,7 @@ namespace TweedTestframework.Tests
             test.Log(Status.Pass, "TestMethod1 Passed");
         }
 
-        [Test(Description = "Verify footer title displayed on footer panel")]
+        [Test(Description = "Verify footer title displayed on footer panel"),Category("Functional Testing")]
         public void TestMethod2()
         {
             ExtentTest test = extent.CreateTest("TestMethod2").Info("Test Started");
@@ -56,7 +52,7 @@ namespace TweedTestframework.Tests
             test.Log(Status.Pass, "TestMethod2 Passed");
         }
 
-        [Test(Description = "Click on Contactus link on Footer")]
+        [Test(Description = "Click on Contactus link on Footer"),Category("Functional Testing")]
         public void TestMethod3()
         {
             ExtentTest test = extent.CreateTest("TestMethod3").Info("Test Started");
@@ -72,7 +68,7 @@ namespace TweedTestframework.Tests
 
         }
 
-        [Test(Description="Click on StoreFinder link on Footer Panel")]
+        [Test(Description="Click on StoreFinder link on Footer Panel"),Category("Functional Testing")]
         public void TestMethod4()
         {
             ExtentTest test = extent.CreateTest("TestMethod4").Info("Test Started");
@@ -87,7 +83,7 @@ namespace TweedTestframework.Tests
             test.Log(Status.Pass, "TestMethod4 Passed");
         }
 
-        [Test(Description = "Click on Help and support link on Footer Panel")]
+        [Test(Description = "Click on Help and support link on Footer Panel"),Category("Functional Testing")]
         public void TestMethod5()
         {
             ExtentTest test = extent.CreateTest("TestMethod5").Info("Test Started");
