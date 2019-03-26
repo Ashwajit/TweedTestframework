@@ -3,6 +3,7 @@ using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,7 +72,7 @@ namespace TweedTestframework.Tests
 
         }
 
-        [Test(Description = "Click on StoreFinder link on Footer Panel")]
+        [Test(Description="Click on StoreFinder link on Footer Panel")]
         public void TestMethod4()
         {
             ExtentTest test = extent.CreateTest("TestMethod4").Info("Test Started");
@@ -84,6 +85,21 @@ namespace TweedTestframework.Tests
             test.Log(Status.Info, "A Warm Welcome text displayed on the banner");
             Assert.AreEqual(actual, expected);
             test.Log(Status.Pass, "TestMethod4 Passed");
+        }
+
+        [Test(Description = "Click on Help and support link on Footer Panel")]
+        public void TestMethod5()
+        {
+            ExtentTest test = extent.CreateTest("TestMethod5").Info("Test Started");
+            var expected = "WE'RE HERE TO HELP";
+            var investment = new InvestmentsPage(driver);
+            investment.ClickOnHelpSupportFooterLink();
+            test.Log(Status.Info, "Help and support link clicked");
+            var helpsupportpageobj = new HelpSupportPage(driver);
+            var actual = helpsupportpageobj.VerifyHelpSupportHeading();
+            test.Log(Status.Info, "Help and Support page is displayed with hero title- WE'RE HERE TO HELP");
+            Assert.AreEqual(actual, expected);
+            test.Log(Status.Pass, "TestMethod5 Passed");
         }
        
 

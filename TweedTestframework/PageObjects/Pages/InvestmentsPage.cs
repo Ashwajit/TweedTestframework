@@ -32,8 +32,10 @@ namespace TweedTestframework.PageObjects.Pages
         [FindsBy(How = How.LinkText, Using = "Store finder")]
         public IWebElement StoreFinderFooterLink { get; set; }
 
+        [FindsBy(How = How.LinkText, Using = "Help and support")]
+        public IWebElement HelpSupportFooterLink { get; set; }
 
-    
+
         public String VerifyingInvestmentPageExists()
         {
             var actual = InvestmentTextOnBanner.Text;
@@ -59,6 +61,13 @@ namespace TweedTestframework.PageObjects.Pages
             StoreFinderFooterLink.Click();
             return new StoreFinderPage(driver);
         }
+
+        public HelpSupportPage ClickOnHelpSupportFooterLink()
+        {
+            HelpSupportFooterLink.Click();
+            return new HelpSupportPage(driver);
+        }
+
 
 
     }
