@@ -92,6 +92,7 @@
     <Compile Include="PageObjects\Pages\ContactPage.cs" />
     <Compile Include="PageObjects\Pages\HelpSupportPage.cs" />
     <Compile Include="PageObjects\Pages\InvestmentsPage.cs" />
+    <Compile Include="PageObjects\Pages\LegalsPage.cs" />
     <Compile Include="PageObjects\Pages\PensionsPage.cs" />
     <Compile Include="PageObjects\Pages\StoreFinderPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

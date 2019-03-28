@@ -19,6 +19,9 @@ namespace TweedTestframework.PageObjects.Pages
             PageFactory.InitElements(driver, this);
         }
 
+        
+
+
         [FindsBy(How = How.XPath, Using = "//h2[contains(text(),'here for you')]")]
         public IWebElement FooterTitleElement { get; set; }
 
@@ -35,6 +38,9 @@ namespace TweedTestframework.PageObjects.Pages
         [FindsBy(How = How.LinkText, Using = "Help and support")]
         public IWebElement HelpSupportFooterLink { get; set; }
 
+
+        [FindsBy(How = How.CssSelector, Using = "a.link-chevron-right")]
+        public IWebElement LegalsFooterLink { get; set; }
 
         public String VerifyingInvestmentPageExists()
         {
@@ -68,6 +74,11 @@ namespace TweedTestframework.PageObjects.Pages
             return new HelpSupportPage(driver);
         }
 
+        public LegalsPage ClickOnLegalsFooterLink()
+        {
+            LegalsFooterLink.Click();
+            return new LegalsPage(driver);
+        }
 
 
     }

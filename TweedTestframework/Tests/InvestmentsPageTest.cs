@@ -97,7 +97,23 @@ namespace TweedTestframework.Tests
             Assert.AreEqual(actual, expected);
             test.Log(Status.Pass, "TestMethod5 Passed");
         }
-       
+
+
+        [Test(Description = "Click on Legals > link on Footer Panel"), Category("Functional Testing")]
+        public void TestMethod6()
+        {
+            ExtentTest test = extent.CreateTest("TestMethod6").Info("Test Started");
+            var expected = "Terms of use for our website";
+            var investment = new InvestmentsPage(driver);
+            investment.ClickOnLegalsFooterLink();
+            test.Log(Status.Info, "Legals > link clicked");
+            var legalspageobj = new LegalsPage(driver);
+            var actual = legalspageobj.VerifyLegalsHeading();
+            test.Log(Status.Info, "Legals page is displayed with hero title- WE'RE HERE TO HELP");
+            Assert.AreEqual(actual, expected);
+            test.Log(Status.Pass, "TestMethod6 Passed");
+        }
+
 
 
     }
