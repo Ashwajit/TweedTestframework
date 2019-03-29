@@ -20,7 +20,7 @@ namespace TweedTestframework.PageObjects.Pages
         }
 
         
-
+        //Object Repository or Page Factory
 
         [FindsBy(How = How.XPath, Using = "//h2[contains(text(),'here for you')]")]
         public IWebElement FooterTitleElement { get; set; }
@@ -41,6 +41,26 @@ namespace TweedTestframework.PageObjects.Pages
 
         [FindsBy(How = How.CssSelector, Using = "a.link-chevron-right")]
         public IWebElement LegalsFooterLink { get; set; }
+
+
+        [FindsBy(How = How.LinkText, Using = "Privacy policy")]
+        public IWebElement PrivacyFooterLink { get; set; }
+
+
+        [FindsBy(How = How.LinkText, Using = "Cookies")]
+        public IWebElement CookiesFooterLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Feedback")]
+        public IWebElement FeedbackFooterLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Sitemap")]
+        public IWebElement SitemapFooterLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Accessibility")]
+        public IWebElement AccessibilityFooterLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "About us")]
+        public IWebElement AboutUsFooterLink { get; set; }
 
         public String VerifyingInvestmentPageExists()
         {
@@ -80,6 +100,42 @@ namespace TweedTestframework.PageObjects.Pages
             return new LegalsPage(driver);
         }
 
+        public PrivacyPage ClickOnPrivacyFooterLink()
+        {
+            PrivacyFooterLink.Click();
+            return new PrivacyPage(driver);
+        }
+
+
+        public CookiesPage ClickOnCookiesFooterLink()
+        {
+            CookiesFooterLink.Click();
+            return new CookiesPage(driver);
+        }
+
+        public FeedbackPage ClickOnFeedbackFooterLink()
+        {
+            FeedbackFooterLink.Click();
+            return new FeedbackPage(driver);
+        }
+
+        public SitemapPage ClickOnSitemapFooterLink()
+        {
+            SitemapFooterLink.Click();
+            return new SitemapPage(driver);
+        }
+
+        public AccessibilityPage ClickOnAccessibilityFooterLink()
+        {
+            AccessibilityFooterLink.Click();
+            return new AccessibilityPage(driver);
+        }
+
+        public AboutUsPage ClickOnAboutUsFooterLink()
+        {
+            AboutUsFooterLink.Click();
+            return new AboutUsPage(driver);
+        }
 
     }
 }

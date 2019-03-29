@@ -109,12 +109,103 @@ namespace TweedTestframework.Tests
             test.Log(Status.Info, "Legals > link clicked");
             var legalspageobj = new LegalsPage(driver);
             var actual = legalspageobj.VerifyLegalsHeading();
-            test.Log(Status.Info, "Legals page is displayed with hero title- WE'RE HERE TO HELP");
+            test.Log(Status.Info, "Legals page is displayed with hero title- Terms of use for our website");
             Assert.AreEqual(actual, expected);
             test.Log(Status.Pass, "TestMethod6 Passed");
         }
 
+        [Test(Description = "Click on Privacy > link on Footer Panel"), Category("Functional Testing")]
+        public void TestMethod7()
+        {
+            ExtentTest test = extent.CreateTest("TestMethod7").Info("Test Started");
+            var expected = "Virgin Money Privacy Policy";
+            var investment = new InvestmentsPage(driver);
+            investment.ClickOnPrivacyFooterLink();
+            test.Log(Status.Info, "Privacy > link clicked");
+            var privacypageobj = new PrivacyPage(driver);
+            var actual = privacypageobj.VerifyPrivacyHeading();
+            test.Log(Status.Info, "Privacy page is displayed with heading- Virgin Money Privacy Policy");
+            Assert.AreEqual(actual, expected);
+            test.Log(Status.Pass, "TestMethod7 Passed");
+        }
 
+
+        [Test(Description = "Click on Privacy > link on Footer Panel"), Category("Functional Testing")]
+        public void TestMethod8()
+        {
+            ExtentTest test = extent.CreateTest("TestMethod8").Info("Test Started");
+            var expected = "About cookies and how we use them";
+            var investment = new InvestmentsPage(driver);
+            investment.ClickOnCookiesFooterLink();
+            test.Log(Status.Info, "Cookies > link clicked");
+            var cookiespageobj = new CookiesPage(driver);
+            var actual = cookiespageobj.VerifyCookiesHeading();
+            test.Log(Status.Info, "Cookies page is displayed with heading- About cookies and how we use them");
+            Assert.AreEqual(actual, expected);
+            test.Log(Status.Pass, "TestMethod8 Passed");
+        }
+
+
+        [Test(Description = "Click on Feedback > link on Footer Panel"), Category("Functional Testing")]
+        public void TestMethod9()
+        {
+            ExtentTest test = extent.CreateTest("TestMethod9").Info("Test Started");
+            var expected = "We'd love to hear what you think";
+            var investment = new InvestmentsPage(driver);
+            investment.ClickOnFeedbackFooterLink();
+            test.Log(Status.Info, "Feedback > link clicked");
+            var feedbackpageobj = new FeedbackPage(driver);
+            var actual = feedbackpageobj.VerifyFeedbackHeading();
+            test.Log(Status.Info, "Feedback page is displayed with h1 heading- We'd love to hear what you think");
+            Assert.AreEqual(actual, expected);
+            test.Log(Status.Pass, "TestMethod9 Passed");
+        }
+
+        [Test(Description = "Click on Sitemap > link on Footer Panel"), Category("Functional Testing")]
+        public void TestMethod10()
+        {
+            ExtentTest test = extent.CreateTest("TestMethod10").Info("Test Started");
+            var expected = "Sitemap";
+            var investment = new InvestmentsPage(driver);
+            investment.ClickOnSitemapFooterLink();
+            test.Log(Status.Info, "Sitemap > link clicked");
+            var sitemappageobj = new SitemapPage(driver);
+            var actual = sitemappageobj.VerifySitemapHeading();
+            test.Log(Status.Info, "Sitemap page is displayed with h1 heading- Sitemap");
+            Assert.AreEqual(actual, expected);
+            test.Log(Status.Pass, "TestMethod10 Passed");
+        }
+
+
+        [Test(Description = "Click on Accessibility > link on Footer Panel"), Category("Functional Testing")]
+        public void TestMethod11()
+        {
+            ExtentTest test = extent.CreateTest("TestMethod11").Info("Test Started");
+            var expected = "Offering accessibility support for those who need it";
+            var investment = new InvestmentsPage(driver);
+            investment.ClickOnAccessibilityFooterLink();
+            test.Log(Status.Info, "Accessibility > link clicked");
+            var accessibilitypageobj = new AccessibilityPage(driver);
+            var actual = accessibilitypageobj.VerifyAccessibilityHeading();
+            test.Log(Status.Info, "Accessibility page is displayed with h1 heading- Offering accessibility supports for those who need it");
+            Assert.AreEqual(actual, expected);
+            test.Log(Status.Pass, "TestMethod11 Passed");
+        }
+
+        [Test(Description = "Click on About us > link on Footer Panel"), Category("Functional Testing")]
+        public void TestMethod12()
+        {
+            ExtentTest test = extent.CreateTest("TestMethod12").Info("Test Started");
+            var expected = "THERE'S MONEY AND THERE'S VIRGIN MONEY";
+            var investment = new InvestmentsPage(driver);
+            investment.ClickOnAboutUsFooterLink();
+            test.Log(Status.Info, "About us > link clicked");
+            var aboutuspageobj = new AboutUsPage(driver);
+            var actual = aboutuspageobj.VerifyAboutUsHeading();
+            test.Log(Status.Info, "About us page is displayed with h1 heading- Sitemap");
+            Assert.AreEqual(actual, expected);
+            test.Log(Status.Pass, "TestMethod12 Passed");
+        }
 
     }
 }
