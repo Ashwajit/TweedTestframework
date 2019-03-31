@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTest.cs" />
+    <Compile Include="PageObjects\Global\Footer\FooterComponents.cs" />
     <Compile Include="PageObjects\Pages\AboutUsPage.cs" />
     <Compile Include="PageObjects\Pages\AccessibilityPage.cs" />
     <Compile Include="PageObjects\Pages\ContactPage.cs" />
@@ -102,10 +103,13 @@
     <Compile Include="PageObjects\Pages\SitemapPage.cs" />
     <Compile Include="PageObjects\Pages\StoreFinderPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\FooterComponentsTest.cs" />
     <Compile Include="Tests\InvestmentsPageTest.cs" />
+    <Compile Include="Tests\PensionsPageTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ExtentReports\" />
+    <Folder Include="PageObjects\Global\Nav\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -123,5 +127,7 @@
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.13.0\build\net35\NUnit3TestAdapter.props'))" />
     <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\Selenium.Firefox.WebDriver.0.23.0\build\Selenium.Firefox.WebDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.Firefox.WebDriver.0.23.0\build\Selenium.Firefox.WebDriver.targets'))" />
   </Target>
+  <Import Project="..\packages\Selenium.Firefox.WebDriver.0.23.0\build\Selenium.Firefox.WebDriver.targets" Condition="Exists('..\packages\Selenium.Firefox.WebDriver.0.23.0\build\Selenium.Firefox.WebDriver.targets')" />
 </Project>
