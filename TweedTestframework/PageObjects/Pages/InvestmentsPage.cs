@@ -8,6 +8,7 @@ namespace TweedTestframework.PageObjects.Pages
     public class InvestmentsPage
     {
         IWebDriver driver;
+
         public InvestmentsPage(IWebDriver driver)
         {
             this.driver = driver;

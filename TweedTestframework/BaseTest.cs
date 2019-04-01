@@ -22,8 +22,10 @@ namespace TweedTestframework
             //options.AddArgument("--headless");
             //driver = new ChromeDriver(options);
 
-            driver = new ChromeDriver();
-           // driver = new FirefoxDriver();
+            ///Nikhil
+
+            //driver = new ChromeDriver();
+           driver = new FirefoxDriver();
             driver.Manage().Window.Maximize();
             driver.Navigate().GoToUrl("https://uk.virginmoney.com/virgin/splash/investments.jsp");
             Thread.Sleep(1000);
