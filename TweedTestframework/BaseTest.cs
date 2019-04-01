@@ -22,8 +22,6 @@ namespace TweedTestframework
             //options.AddArgument("--headless");
             //driver = new ChromeDriver(options);
 
-            ///Nikhil
-
             //driver = new ChromeDriver();
            driver = new FirefoxDriver();
             driver.Manage().Window.Maximize();
