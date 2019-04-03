@@ -50,7 +50,10 @@ namespace TweedTestframework.PageObjects.Pages
         [FindsBy(How = How.LinkText, Using = "About us")]
         public IWebElement AboutUsFooterLink { get; set; }
 
+        [FindsBy(How = How.LinkText, Using = "Careers")]
+        public IWebElement CareersFooterLink { get; set; }
 
+      
         public String VerifyFooterTitle()
         {
             var footertitle = FooterTitleElement.Text;
@@ -118,6 +121,14 @@ namespace TweedTestframework.PageObjects.Pages
             AboutUsFooterLink.Click();
             return new AboutUsPage(driver);
         }
-        
+
+
+        public CareersPage ClickOnCareersFooterLink()
+        {
+            CareersFooterLink.Click();
+            return new CareersPage(driver);
+        }
+
+       
     }
 }

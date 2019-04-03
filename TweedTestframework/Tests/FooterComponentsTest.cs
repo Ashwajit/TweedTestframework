@@ -138,7 +138,7 @@ namespace TweedTestframework.Tests
             test.Log(Status.Pass, "Accessibility test step passed");
 
 
-            // 11. Verifying About us link on Footer Pane
+            // 11. Verifying About us link on Footer Panel
             var expectedaboutus = "THERE'S MONEY AND THERE'S VIRGIN MONEY";
             footercomponent.ClickOnAboutUsFooterLink();
             test.Log(Status.Info, "About us > link clicked");
@@ -147,6 +147,20 @@ namespace TweedTestframework.Tests
             test.Log(Status.Info, "About us page is displayed with h1 heading- Sitemap");
             Assert.AreEqual(actualaboutus, expectedaboutus);
             test.Log(Status.Pass, "About us test step Passed");
+
+
+            // 12. Verifying Careers > link on Footer Panel
+            var expectedcareers = "Welcome to Virgin Money careers";
+            footercomponent.ClickOnCareersFooterLink();
+            test.Log(Status.Info, "Careers > link clicked");
+            var careerspageobj = new CareersPage(driver);
+            var actualcareers = careerspageobj.VerifyCareersHeading();
+            test.Log(Status.Info, "Careers page is displayed with h1 heading - Welcome to Virgin Money careers");
+            Assert.AreEqual(actualcareers, expectedcareers);
+            test.Log(Status.Pass, "Careers test step Passed");
+
+       
+
         }
 
     }

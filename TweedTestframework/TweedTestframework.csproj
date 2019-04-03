@@ -92,6 +92,7 @@
     <Compile Include="PageObjects\Global\Footer\FooterComponents.cs" />
     <Compile Include="PageObjects\Pages\AboutUsPage.cs" />
     <Compile Include="PageObjects\Pages\AccessibilityPage.cs" />
+    <Compile Include="PageObjects\Pages\CareersPage.cs" />
     <Compile Include="PageObjects\Pages\ContactPage.cs" />
     <Compile Include="PageObjects\Pages\CookiesPage.cs" />
     <Compile Include="PageObjects\Pages\FeedbackPage.cs" />
