@@ -8,26 +8,25 @@ using System.Threading.Tasks;
 
 namespace TweedTestframework.PageObjects.Pages
 {
-    public class CareersPage
+    public class ModernSlaveryActPage
     {
-
         IWebDriver driver;
 
-        public CareersPage(IWebDriver driver)
+        public ModernSlaveryActPage(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
 
         [FindsBy(How = How.CssSelector, Using = "h1")]
-        public IWebElement CareersHeading { get; set; }
+        public IWebElement ModernSlaveryActHeading { get; set; }
 
-      
-        public String VerifyCareersHeading()
+        public String VerifyModernSlaveryActHeading()
         {
-            var str = CareersHeading.Text;
+            var str = ModernSlaveryActHeading.Text;
             return str;
         }
+
 
     }
 }

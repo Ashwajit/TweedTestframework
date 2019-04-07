@@ -2,6 +2,7 @@
 using AventStack.ExtentReports.Reporter;
 using NUnit.Framework;
 using System;
+using System.Threading;
 //using System.ComponentModel;
 using TweedTestframework.PageObjects.Pages;
 
@@ -32,7 +33,7 @@ namespace TweedTestframework.Tests
 
             ExtentTest test = extent.CreateTest("VerifyingFooterLinks").Info("Test Started");
             var footercomponent = new FooterComponents(driver);
-           
+            var footercomponentsociallinks = new FooterComponentsSocialLinks(driver);
             // 1.Verifying footer title  on Footer Panel
 
             var expectedfootertitle = "We're here for you";
@@ -149,7 +150,7 @@ namespace TweedTestframework.Tests
             test.Log(Status.Pass, "About us test step Passed");
 
 
-            // 12. Verifying Careers > link on Footer Panel
+          //  12.Verifying Careers > link on Footer Panel
             var expectedcareers = "Welcome to Virgin Money careers";
             footercomponent.ClickOnCareersFooterLink();
             test.Log(Status.Info, "Careers > link clicked");
@@ -158,8 +159,71 @@ namespace TweedTestframework.Tests
             test.Log(Status.Info, "Careers page is displayed with h1 heading - Welcome to Virgin Money careers");
             Assert.AreEqual(actualcareers, expectedcareers);
             test.Log(Status.Pass, "Careers test step Passed");
+            driver.Navigate().Back();           
 
-       
+
+            // 13. Verifying Media Centre > link on Footer Panel
+            var expectedmediacentre = "Welcome to the Virgin Money Media Centre";
+            footercomponent.ClickOnMediaCentreFooterLink();
+            test.Log(Status.Info, "Media Centre > link clicked");
+            var mediacentrepageobj = new MediaCentrePage(driver);
+            var actualmediacentre = mediacentrepageobj.VerifyMediaCentreHeading();
+            test.Log(Status.Info, "Media Centre page is displayed with h1 heading - ");
+            Assert.AreEqual(actualmediacentre, expectedmediacentre);
+            test.Log(Status.Pass, "Media Centre test step Passed");
+
+            // 14. Verifying Our Lounges > link on Footer Panel
+            var expectedourlounges = "VIRGIN MONEY LOUNGES";
+            footercomponent.ClickOnOurLoungesFooterLink();
+            test.Log(Status.Info, "Our Lounges > link clicked");
+            var ourloungespageobj = new OurLoungesPage(driver);
+            var actualourlounges = ourloungespageobj.VerifyOurLoungesHeading();
+            test.Log(Status.Info, "Our Lounges page is displayed with h1 heading -VIRGIN MONEY LOUNGES ");
+            Assert.AreEqual(actualourlounges, expectedourlounges);
+            test.Log(Status.Pass, "Our Lounges test step Passed");
+
+            // 15. Verifying Intermediaries > link on Footer Panel
+            var expectedintermediaries = "Affordability calculator";
+            footercomponent.ClickOnIntermediariesFooterLink();
+            test.Log(Status.Info, "Intermediaries > link clicked");
+            var intermediariespageobj = new IntermediariesPage(driver);
+            var actualintermediaries = intermediariespageobj.VerifyAffordabilityCalculators();
+            test.Log(Status.Info, "Intermediaries page is displayed with Affordability Calculators ");
+            Assert.AreEqual(actualintermediaries, expectedintermediaries);
+            test.Log(Status.Pass, "Intermediaries test step Passed");
+            driver.Navigate().Back();
+
+
+            // 16. Verifying Investor relations > link on Footer Panel
+            var expectedinvestorrelations = "Welcome to Virgin Money Investor Relations";
+            footercomponent.ClickOnInvestorRelationsFooterLink();
+            test.Log(Status.Info, "Investor relations > link clicked");
+            var investorrelationspageobj = new InvestorRelationsPage(driver);
+            var actualinvestorrelations = investorrelationspageobj.VerifyInvestorRelationsHeading();
+            test.Log(Status.Info, "Investor Relations page is displayed with Affordability Calculators ");
+            Assert.AreEqual(actualinvestorrelations, expectedinvestorrelations);
+            test.Log(Status.Pass, "Investor Relations test step Passed");
+
+
+            // 17. Verifying Gender Pay Gap > link on Footer Panel
+            var expectedgenderpaygap = "Gender balance";
+            footercomponent.ClickOnGenderPayGapFooterLink();
+            test.Log(Status.Info, "Gender Pay Gap > link clicked");
+            var genderpaygappageobj = new GenderPayGapPage(driver);
+            var actualgenderpaygap = genderpaygappageobj.VerifyGenderPayGapHeading();
+            test.Log(Status.Info, "Gender Pay Gap page is displayed with Gender balance");
+            Assert.AreEqual(actualgenderpaygap, expectedgenderpaygap);
+            test.Log(Status.Pass, "Gender Pay Gap test step Passed");
+
+            // 18. Verifying Gender Pay Gap > link on Footer Panel
+            var expectedmodernslaveryact = "Modern Slavery Act";
+            footercomponent.ClickOnModernSlaveryActFooterLink();
+            test.Log(Status.Info, "Modern Slavery Act > link clicked");
+            var modernslaveryactpageobj = new ModernSlaveryActPage(driver);
+            var actualmodernslaveryact = modernslaveryactpageobj.VerifyModernSlaveryActHeading();
+            test.Log(Status.Info, "Modern Slavery Act page is displayed with");
+            Assert.AreEqual(actualmodernslaveryact, expectedmodernslaveryact);
+            test.Log(Status.Pass, "Modern Slavery Act test step Passed");
 
         }
 

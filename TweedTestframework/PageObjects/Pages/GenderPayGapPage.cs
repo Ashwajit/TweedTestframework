@@ -8,26 +8,25 @@ using System.Threading.Tasks;
 
 namespace TweedTestframework.PageObjects.Pages
 {
-    public class CareersPage
+    public class GenderPayGapPage
     {
-
         IWebDriver driver;
 
-        public CareersPage(IWebDriver driver)
+        public GenderPayGapPage(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
 
         [FindsBy(How = How.CssSelector, Using = "h1")]
-        public IWebElement CareersHeading { get; set; }
+        public IWebElement GenderPayGapHeading { get; set; }
 
-      
-        public String VerifyCareersHeading()
+        public String VerifyGenderPayGapHeading()
         {
-            var str = CareersHeading.Text;
+            var str = GenderPayGapHeading.Text;
             return str;
         }
+
 
     }
 }

@@ -89,7 +89,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTest.cs" />
+    <Compile Include="PageObjects\Global\Footer\FooterComponentsSocialLinks.cs" />
     <Compile Include="PageObjects\Global\Footer\FooterComponents.cs" />
+    <Compile Include="PageObjects\Pages\ModernSlaveryActPage.cs" />
+    <Compile Include="PageObjects\Pages\GenderPayGapPage.cs" />
+    <Compile Include="PageObjects\Pages\InvestorRelationsPage.cs" />
+    <Compile Include="PageObjects\Pages\IntermediariesPage.cs" />
     <Compile Include="PageObjects\Pages\AboutUsPage.cs" />
     <Compile Include="PageObjects\Pages\AccessibilityPage.cs" />
     <Compile Include="PageObjects\Pages\CareersPage.cs" />
@@ -99,6 +104,8 @@
     <Compile Include="PageObjects\Pages\HelpSupportPage.cs" />
     <Compile Include="PageObjects\Pages\InvestmentsPage.cs" />
     <Compile Include="PageObjects\Pages\LegalsPage.cs" />
+    <Compile Include="PageObjects\Pages\MediaCentrePage.cs" />
+    <Compile Include="PageObjects\Pages\OurLoungesPage.cs" />
     <Compile Include="PageObjects\Pages\PensionsPage.cs" />
     <Compile Include="PageObjects\Pages\PrivacyPage.cs" />
     <Compile Include="PageObjects\Pages\SitemapPage.cs" />

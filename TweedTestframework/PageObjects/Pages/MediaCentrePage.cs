@@ -1,31 +1,27 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace TweedTestframework.PageObjects.Pages
 {
-    public class CareersPage
+    public class MediaCentrePage
     {
-
         IWebDriver driver;
 
-        public CareersPage(IWebDriver driver)
+        public MediaCentrePage(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
 
         [FindsBy(How = How.CssSelector, Using = "h1")]
-        public IWebElement CareersHeading { get; set; }
+        public IWebElement MediaCentreHeading { get; set; }
 
-      
-        public String VerifyCareersHeading()
+        public String VerifyMediaCentreHeading()
         {
-            var str = CareersHeading.Text;
+            var str = MediaCentreHeading.Text;
+            Thread.Sleep(2000);
             return str;
         }
 

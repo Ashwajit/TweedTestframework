@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
 using System;
+using System.Threading;
 
 namespace TweedTestframework.PageObjects.Pages
 {
@@ -53,7 +54,28 @@ namespace TweedTestframework.PageObjects.Pages
         [FindsBy(How = How.LinkText, Using = "Careers")]
         public IWebElement CareersFooterLink { get; set; }
 
-      
+
+        [FindsBy(How = How.LinkText, Using = "Media centre")]
+        public IWebElement MediaCentreFooterLink { get; set; }
+
+
+        [FindsBy(How = How.LinkText, Using = "Our Lounges")]
+        public IWebElement OurLoungesFooterLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Intermediaries")]
+        public IWebElement IntermediariesFooterLink { get; set; }
+
+
+        [FindsBy(How = How.LinkText, Using = "Investor relations")]
+        public IWebElement InvestorRelationsFooterLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Gender Pay Gap")]
+        public IWebElement GenderPayGapFooterLink { get; set; }
+
+        [FindsBy(How = How.LinkText, Using = "Modern Slavery Act")]
+        public IWebElement ModernSlaveryActFooterLink { get; set; }
+
+
         public String VerifyFooterTitle()
         {
             var footertitle = FooterTitleElement.Text;
@@ -129,6 +151,44 @@ namespace TweedTestframework.PageObjects.Pages
             return new CareersPage(driver);
         }
 
-       
+        public MediaCentrePage ClickOnMediaCentreFooterLink()
+        {
+            MediaCentreFooterLink.Click();
+            return new MediaCentrePage(driver);
+        }
+
+        public OurLoungesPage ClickOnOurLoungesFooterLink()
+        {
+            OurLoungesFooterLink.Click();
+            return new OurLoungesPage(driver);
+        }
+
+
+        public IntermediariesPage ClickOnIntermediariesFooterLink()
+        {
+            IntermediariesFooterLink.Click();
+            return new IntermediariesPage(driver);
+        }
+
+
+        public InvestorRelationsPage ClickOnInvestorRelationsFooterLink()
+        {
+            InvestorRelationsFooterLink.Click();
+            return new InvestorRelationsPage(driver);
+        }
+
+        public GenderPayGapPage ClickOnGenderPayGapFooterLink()
+        {
+            GenderPayGapFooterLink.Click();
+            return new GenderPayGapPage(driver);
+        }
+
+        public ModernSlaveryActPage ClickOnModernSlaveryActFooterLink()
+        {
+            ModernSlaveryActFooterLink.Click();
+            return new ModernSlaveryActPage(driver);
+        }
+
+
     }
 }

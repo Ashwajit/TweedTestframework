@@ -8,26 +8,25 @@ using System.Threading.Tasks;
 
 namespace TweedTestframework.PageObjects.Pages
 {
-    public class CareersPage
+    public class InvestorRelationsPage
     {
-
         IWebDriver driver;
 
-        public CareersPage(IWebDriver driver)
+        public InvestorRelationsPage(IWebDriver driver)
         {
             this.driver = driver;
             PageFactory.InitElements(driver, this);
         }
 
         [FindsBy(How = How.CssSelector, Using = "h1")]
-        public IWebElement CareersHeading { get; set; }
+        public IWebElement InvestorRelationsHeading { get; set; }
 
-      
-        public String VerifyCareersHeading()
+        public String VerifyInvestorRelationsHeading()
         {
-            var str = CareersHeading.Text;
+            var str = InvestorRelationsHeading.Text;
             return str;
         }
+
 
     }
 }
